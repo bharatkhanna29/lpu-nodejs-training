@@ -18,7 +18,7 @@ function addNums(req, res) {
     );
 }
 
-app.patch('/addTwoNums', addNums)
+app.get('/addTwoNums', addNums)
 
 const port = 3001
 const ip = "localhost"
