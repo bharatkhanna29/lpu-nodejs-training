@@ -18,7 +18,24 @@ function addNums(req, res) {
     );
 }
 
+function mulNums(req, res) {
+    if (req.query.a == null || req.query.b == null) {
+        res.status(400).send({error: "Numbers are given as null"})
+    }
+    const a = Number(req.query.a);
+    const b = Number(req.query.b);
+    const name = req.query.name;
+    console.log(name);
+    const sum = a * b;
+    res.status(200).send(
+        {
+            "sum": sum
+        }
+    );
+}
+
 app.get('/addTwoNums', addNums)
+app.get('/multiply', mulNums)
 
 const port = 3001
 const ip = "localhost"
